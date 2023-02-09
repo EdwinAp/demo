@@ -81,7 +81,7 @@ public class UserController {
     public ResponseEntity updateUser(@RequestBody UserDto userDto){
         message = UserDto.isInvalidAnyFieldUpdate(userDto);
         if (message.isEmpty()){
-            return ResponseEntity.status(HttpStatus.CREATED).body(iUserService.updateUser(userDto));
+            return ResponseEntity.status(HttpStatus.OK).body(iUserService.updateUser(userDto));
         }
         return exampleResponse(false);
     }
